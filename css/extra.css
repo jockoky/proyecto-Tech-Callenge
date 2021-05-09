@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #095a55;
+}
+section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #ff6961;
+}
+.rule{
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+}
+.rule .ruleInfo{
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100% - 80px);
+    background: #095a55;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px rgba(0,0,0,.15);
+}
+.rule .ruleInfo h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+}
+.rule .ruleInfo ol.rules{
+    position: relative;
+    margin: 30px 0;
+}
+.rule .ruleInfo ol.rules li{
+    position: relative;
+    margin: 20px 10px;
+    color: #fff;
+    font-size: 16px;
+}
+.rule .ruleInfo ol.rules li span{
+    color: #fff;
+    font-weight: 300;
+}
+.rule .ruleForm{
+    position: absolute;
+    padding: 70px 50px;
+    padding-left: 250px;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 50px 50px rgba(0,0,0,.25);
+}
+.rule .ruleForm h2{
+    color: #0f3959;
+    font-size: 30px;
+    font-weight: 500;
+}
+.rule .ruleForm .formBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+.rule .ruleForm .formBox .inputBox{
+    position: relative;
+    margin-bottom: 35px;
+}
+.rule .ruleForm .formBox .inputBox.w50{
+    width: 47%;
+}
+.rule .ruleForm .formBox .inputBox.w100{
+    width: 100%;
+}
+.rule .ruleForm .formBox .inputBox input{
+    width: 100%;
+    resize: none;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #777;
+}
+.rule .ruleForm .formBox .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    pointer-events: none;
+    font-size: 18px;
+    font-weight: 300;
+    transition: .3s;
+}
+.rule .ruleForm .formBox .inputBox input:focus ~ span,
+.rule .ruleForm .formBox .inputBox input:valid ~ span{
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #095a55;
+}
+.rule .ruleForm .formBox .inputBox input[type="submit"],
+a.return{
+    position: relative;
+    cursor: pointer;
+    background: #095a55;
+    color: #fff;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+    text-decoration: none;
+}
+.rule .ruleForm .formBox .inputBox input[type="submit"]:hover{
+    background: #0d948b;
+}
+
+@media (max-width: 1200px){
+    .rule{
+        width: 90%;
+        min-width: auto;
+        margin: 20px;
+        box-shadow: 0 20px 50px rgba(0,0,0,.2);
+    }
+    .rule .ruleInfo{
+        top: 0;
+        height: 550px;
+        position: relative;
+        box-shadow: none;
+    }
+    .rule .ruleForm{
+        position: relative;
+        width: calc(100% - 350px);
+        padding-left: 0;
+        margin-left: 0;
+        padding: 40px;
+        height: 550px;
+        box-shadow: none;
+    }
+}
+@media (max-width: 991px){
+    section{
+        background: #ff6961;
+    }
+    section::before{
+        display: none;
+    }
+    .rule{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .rule .ruleForm{
+        width: 100%;
+        height: auto;
+    }
+    .rule .ruleInfo{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+}
+@media (max-width: 600px){
+    .rule .ruleForm{
+        padding: 25px;
+    }
+    .rule .ruleInfo{
+        padding: 25px;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .rule .ruleForm .formBox .inputBox.w50{
+        width: 100%;
+    }
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-attachment: fixed;
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #0d9d45, #033510);
+    min-height: 100vh;
+
+}
+.turn,
+.reset{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+    width: 100px;
+    text-align: center;
+}
+.dice{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    border: solid 2px #000;
+    border-radius: 15%;
+    background: rgb(255,0,0);
+    color: #fff;
+    font-size: 50px;
+}
+.points{
+    text-align: center;
+    background: #07252d;
+    padding: 50px;
+    font-size: 6em;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    color: #0e3742;
+    border-radius: 15%;
+    line-height: .7em;
+    outline: none;
+    animation: neon 5s linear infinite;
+}
+@keyframes neon{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+        color: #0e3742;
+        text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,66%,80%,90%,92.1%,100%{
+        color: #f5f5f5;
+        text-shadow: 0 0 10px #03bcf4,
+                     0 0 20px #03bcf4,
+                     0 0 40px #03bcf4,
+                     0 0 80px #03bcf4,
+                     0 0 160px #03bcf4;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="shortcut icon" href="favicon.png">
+    <title>Random Dices</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="rule">
+            <div class="ruleInfo">
+                <div>
+                    <h2>Reglas del Juego</h2>
+                    <ol class="rules">
+                        <li><span>Las caras de los dados van desde 4 hasta 25.</span></li>
+                        <li><span>El limite de jugadores es de 6.</span></li>
+                        <li><span>El limite de dados por jugador es de 20.</span></li>
+                        <li><span>Para 2 Jugadores o más el juego termina después de la 3er ronda y gana el jugador con mas puntaje.</span></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="ruleForm">
+                <h2>Generador de Dados</h2>
+                <div class="formBox">
+                    <div class="inputBox w50">
+                        <input id="dices" type="number" max="20" min="1" required>
+                        <span>Numero de Dados</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input id="faces" type="number" max="25" min="4" required>
+                        <span>Numero de Caras</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input id="players" type="number" max="6" min="1" required>
+                        <span>Numero de Jugadores</span>
+                    </div>
+                    <div class="inputBox w100 sub">
+                        <input type="submit" value="Comenzar">
+                    </div>
+                    <a href="index.html" class="return">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="cont">
+        <div class="points">
+            <div class="player">Jugador: </div>
+            <div class="punt">Puntaje:</div>
+            <div class="puntTotal">Puntaje Total:</div>
+        </div>
+        <div class="container">
+        </div>
+        <a class="turn" href="#">Tirar</a>
+        <a href="#" class="reset">Nuevo Juego</a>
+    </div>
+    <script src="js/extras.js"></script>
+</body>
+</html>
